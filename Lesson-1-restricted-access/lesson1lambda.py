@@ -7,7 +7,7 @@ adminGroup = 'iamadmins'
 
 def lambda_handler( event, context ):
 	# print("Event data:")
-	# print(json.dumps(event))
+	# print(json.dumps(event)) ## you will need import json above also.
 
 	if event["detail"]["userIdentity"]["type"] != 'IAMUser': # Test if the user type is IAM:
 		print('User is not an IAMUser. Done.')
