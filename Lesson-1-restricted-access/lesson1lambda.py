@@ -1,12 +1,13 @@
 import boto3
 iam = boto3.resource('iam')
+# import json ## uncomment this, if you are wanting to enable debug.
 
 denyPolicyArn = 'POLICYARN::REPLACEME'
 adminGroup = 'iamadmins'
 
 def lambda_handler( event, context ):
 	# print("Event data:")
-	# print(event)
+	# print(json.dumps(event))
 
 	if event["detail"]["userIdentity"]["type"] != 'IAMUser': # Test if the user type is IAM:
 		print('User is not an IAMUser. Done.')
